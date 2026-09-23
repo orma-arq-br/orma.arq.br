@@ -28,10 +28,24 @@ const BOX_PHONE = "75vw"
 const covered = (image: ImageMetadata, width: string, height: string) =>
   `max(${width}, calc(${height} * ${(image.width / image.height).toFixed(3)}))`
 
-/** A photograph in a project's sequence, sized against the row height. */
+/** A photograph cropped to a fixed `ratio` box one row tall (Contato). */
 export function sequenceSizes(image: ImageMetadata, ratio: number) {
   const widest = Math.max(ratio, image.width / image.height).toFixed(3)
   return `(min-width: 60rem) calc(${ROW} * ${widest}), ${covered(image, "100vw", BOX_PHONE)}`
+}
+
+/**
+ * A photograph in a project's sequence, which is never cropped: its box has the
+ * photograph's own proportions, so the painted width is simply the box width.
+ * A row is a grid row tall unless the column is too narrow for the whole row,
+ * in which case the row shrinks to fit (hence the `min()`). `sum` is the row's
+ * total width as a share of its height. On the phone it is the screen's width.
+ */
+export function wholeSizes(image: ImageMetadata, sum: number) {
+  const ratio = image.width / image.height
+  const byHeight = `calc(${ROW} * ${ratio.toFixed(3)})`
+  const byWidth = `calc(${COLUMN} * ${(ratio / sum).toFixed(3)})`
+  return `(min-width: 60rem) min(${byHeight}, ${byWidth}), 100vw`
 }
 
 /** A tile in the portfolio grid, spanning `span` of the 12 columns. */

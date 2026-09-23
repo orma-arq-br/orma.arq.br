@@ -193,8 +193,20 @@ are quoted at that size and live as tokens in `global.css`.
 bottom left in Bold 36px, facts bottom right (Projeto, Local, m², Ano); then the
 description alone on a screen, justified in the shared `--measure` column (the
 menu's width), centred in the right-hand column; then the
-photographs a screenful at a time, centred, widths from `src/lib/sequence.ts`.
+photographs a screenful at a time, centred, grouped by `src/lib/sequence.ts`.
 No summary line and no previous/next links: her design has neither.
+
+**2026-09-23 — photographs inside a project are never cropped.** Each one is
+shown in the exact proportions of the file she uploads. Her Figma shapes are
+the layout, read off each photograph's own ratio in the order listed: 1:1, 4:3
+and **16:9 (added now, same alignment)** take a screen alone; 3:4 pairs; 9:16
+goes three across. An upright with no same-shape neighbour stands alone,
+centred. Rows are one grid row tall with the `--edge` gap between photographs
+and around them (the margins agreed on the home page); a row that would be
+wider than the column shrinks whole instead of cropping. On the phone each
+photograph is full width in its own proportions. This overrides the
+"consistent aspect ratios + cover" rule above for the project sequence only —
+the opening photograph and the portfolio tiles still crop to their boxes.
 
 **Her standing rule (2026-09-16): never write anything over the photographs
 below the opening one.** Not a caption, not a title, not a line of prose — on

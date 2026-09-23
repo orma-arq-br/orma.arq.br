@@ -10,7 +10,7 @@ import {
   openingSizes,
   OPENING_PHOTO,
   PHOTO,
-  sequenceSizes,
+  wholeSizes,
 } from "../../lib/images"
 import { toScreens } from "../../lib/sequence"
 import Layout from "../../layouts/Layout.astro"
@@ -107,14 +107,20 @@ const schema = [
       </div>
     </section>
 
-    {screens.map((screen) => (
-      <div class="screen">
-        {screen.map(({ item, ratio }) => (
-          <figure style={`--ratio: ${ratio}`} data-reveal="clip">
+    {screens.map(({ photos, sum }) => (
+      <div
+        class="screen"
+        style={`--sum: ${sum.toFixed(4)}; --count: ${photos.length}`}
+      >
+        {photos.map(({ item }) => (
+          <figure
+            style={`--ratio: ${item.src.width} / ${item.src.height}`}
+            data-reveal="clip"
+          >
             <Picture
               src={item.src}
               alt={item.alt}
-              sizes={sequenceSizes(item.src, ratio)}
+              sizes={wholeSizes(item.src, sum)}
               {...PHOTO}
               {...LATER_PHOTO}
             />
@@ -129,6 +135,7 @@ const schema = [
   /* Every screen of this page is one grid row tall, so the page moves a
      photograph at a time, exactly like the home page. */
   article {
+    container-type: inline-size;
     --screen: calc(100svh - var(--header-height) - var(--edge));
     display: flex;
     flex-direction: column;
@@ -234,10 +241,14 @@ const schema = [
 
   /* Nothing is ever written over these photographs. There
      is no caption here and no field to put one in — only the opening
-     photograph at the top of the page carries words. */
+     photograph at the top of the page carries words.
+
+     Nor is anything cropped: each box has its own photograph's proportions,
+     so a 16:9 stays 16:9 and a 9:16 stays 9:16. */
   .screen figure {
     margin: 0;
     overflow: clip;
+    aspect-ratio: var(--ratio);
     background: var(--color-grey-2);
   }
 
@@ -248,20 +259,26 @@ const schema = [
   }
 
   /* On the phone everything is simply full width, one under the other. */
-  .opening,
-  .screen figure {
+  .opening {
     block-size: auto;
   }
 
-  .opening img,
-  .screen img {
+  .opening img {
     aspect-ratio: 4 / 3;
   }
 
   @media (min-width: 60rem) {
-    .opening,
-    .screen {
+    .opening {
       block-size: var(--screen);
+    }
+
+    /* A row is a grid row tall, unless its photographs side by side would
+       run wider than the column; then the whole row shrinks to fit. */
+    .screen {
+      block-size: min(
+        var(--screen),
+        (100cqi - (var(--count) - 1) * var(--edge)) / var(--sum)
+      );
     }
 
     /* A screenful when the text fits, taller when it does not, so a long
@@ -271,8 +288,7 @@ const schema = [
       padding-block: var(--edge);
     }
 
-    .opening img,
-    .screen img {
+    .opening img {
       aspect-ratio: auto;
     }
 
@@ -283,7 +299,7 @@ const schema = [
     }
 
     .screen figure {
-      inline-size: calc(var(--screen) * var(--ratio));
+      flex: none;
       block-size: 100%;
     }
 
