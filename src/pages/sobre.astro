@@ -40,18 +40,33 @@ const schema = [
         ))}
       </p>
 
-      <p class="prose" data-reveal style="--stagger: 1">
-        Nossa história começou há dez anos, no primeiro dia de faculdade. A cada
-        trabalho em grupo a amizade foi ficando mais forte, e hoje ela vai muito
-        além do profissional. Somos <strong>{partnerNames[0]}</strong> e{" "}
-        <strong>{partnerNames[1]}</strong>, duas arquitetas formadas pela UFRGS,
-        com uma obsessão por detalhe e um fascínio por espaços funcionais e
-        belos, principalmente quando se trata de criar o lugar dos sonhos de
-        cada cliente: onde se vai morar e criar memórias. O escritório nasceu da
-        vontade de atuarmos juntas em projetos em que acreditamos, com o
-        propósito de proporcionar conforto, segurança, harmonia e paz, tanto no
-        que se vê quanto no que se sente.
-      </p>
+      <div class="prose" data-reveal style="--stagger: 1">
+        <p>
+          Nossa história começou há dez anos, no primeiro dia de faculdade.
+          Entre trabalhos em grupo, projetos, descobertas e muitos momentos
+          compartilhados, nasceu uma amizade que, com o tempo, se transformou
+          também em uma parceria profissional.
+        </p>
+        <p>
+          Somos <strong>{partnerNames[0]}</strong> e{" "}
+          <strong>{partnerNames[1]}</strong>, arquitetas formadas pela UFRGS,
+          unidas pelo olhar atento aos detalhes e pelo fascínio por espaços que
+          aliam beleza, funcionalidade e significado.
+        </p>
+        <p>
+          O escritório nasceu da vontade de trabalharmos juntas em projetos nos
+          quais acreditamos — criando espaços que reflitam a essência, a rotina
+          e os desejos de quem os habita. Para nós, arquitetura vai muito além
+          do que se vê: é sobre criar conforto, acolhimento e harmonia,
+          transformando espaços em lugares para viver, receber, celebrar e
+          construir memórias.
+        </p>
+        <p>
+          É com esse propósito que projetamos: com cuidado em cada escolha,
+          atenção a cada detalhe e a busca constante por criar lugares que façam
+          sentido para quem os chama de lar.
+        </p>
+      </div>
     </div>
   </section>
 
@@ -102,10 +117,15 @@ const schema = [
   }
 
   .prose {
-    max-inline-size: none;
+    display: grid;
+    gap: 1.2em;
     font-size: var(--text-ui);
     line-height: 1.6;
     text-wrap: pretty;
+  }
+
+  .prose p {
+    max-inline-size: none;
   }
 
   .prose strong {
