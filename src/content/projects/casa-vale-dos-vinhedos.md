@@ -7,7 +7,7 @@ year: 2024
 area: 280
 summary: "Uma casa de campo assentada na encosta, com um volume longo e baixo voltado para o vale. O programa inteiro cabe em um pavimento só."
 # TEMPORARY: borrowed from Apartamento BR until this project has its own photos.
-cover: ../../assets/projects/apartamento-br/04-bathroom.jpg
+cover: ../../assets/projects/apartamento-br/08-bathroom-vanity.webp
 coverAlt: Banheiro com azulejo verde assentado na vertical, bancada de marcenaria escura e piso preto e branco
 ---
 

@@ -7,7 +7,7 @@ year: 2023
 area: 120
 summary: "Uma clínica que não parece uma clínica: sem recepção de vidro, sem luz fria, sem corredor de espera. A ideia era baixar a ansiedade de quem chega."
 # TEMPORARY: borrowed from Apartamento BR until this project has its own photos.
-cover: ../../assets/projects/apartamento-br/04-bathroom.jpg
+cover: ../../assets/projects/apartamento-br/08-bathroom-vanity.webp
 coverAlt: Banheiro com azulejo verde assentado na vertical, bancada de marcenaria escura e piso preto e branco
 ---
 
