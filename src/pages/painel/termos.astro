@@ -1,0 +1,45 @@
+---
+import PanelDocument from "../../components/PanelDocument.astro"
+import { studio } from "../../config"
+---
+
+<PanelDocument
+  title="Termos de uso do painel"
+  description={`As regras de uso do painel interno da ${studio.name}.`}
+  updated="27 de outubro de 2026"
+>
+  <p>
+    O painel da {studio.name} (painel.orma.arq.br) é uma ferramenta interna do
+    escritório. Ao entrar, você concorda com estes termos.
+  </p>
+
+  <h2>Quem pode usar</h2>
+  <p>
+    Apenas pessoas da equipe autorizadas pelo escritório, com a própria conta
+    Google. O acesso é pessoal e pode ser retirado a qualquer momento.
+  </p>
+
+  <h2>Uso das informações</h2>
+  <p>
+    As informações do painel são do escritório e de seus clientes. Use-as apenas
+    para o trabalho da {studio.name} e não as compartilhe fora da equipe.
+  </p>
+
+  <h2>Disponibilidade</h2>
+  <p>
+    O painel é oferecido como está. Fazemos o possível para mantê-lo no ar e
+    seguro, mas ele pode ficar fora do ar ou mudar sem aviso.
+  </p>
+
+  <h2>Privacidade</h2>
+  <p>
+    O tratamento dos seus dados está descrito na{" "}
+    <a href="/painel/privacidade">política de privacidade do painel</a>.
+  </p>
+
+  <h2>Contato</h2>
+  <p>
+    Dúvidas sobre estes termos:{" "}
+    <a href={`mailto:${studio.email}`}>{studio.email}</a>.
+  </p>
+</PanelDocument>

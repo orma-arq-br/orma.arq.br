@@ -17,6 +17,9 @@ export default defineConfig({
 
   integrations: [
     sitemap({
+      // The internal panel's privacy policy and terms exist for Google's
+      // sign-in review, not for visitors: never offered to a search engine.
+      filter: (page) => !new URL(page).pathname.startsWith("/painel/"),
       // Every page here is equally worth finding and changes at the same pace:
       // when a project is added. Per-page priorities would be noise.
       changefreq: "monthly",

@@ -1,0 +1,51 @@
+---
+import PanelDocument from "../../components/PanelDocument.astro"
+import { studio } from "../../config"
+---
+
+<PanelDocument
+  title="Política de privacidade do painel"
+  description={`Como o painel interno da ${studio.name} trata os dados de quem entra com a conta Google.`}
+  updated="27 de outubro de 2026"
+>
+  <p>
+    O painel da {studio.name} (painel.orma.arq.br) é uma ferramenta interna,
+    usada apenas pela equipe do escritório. Esta página explica quais dados ele
+    guarda sobre quem entra e por quê.
+  </p>
+
+  <h2>O que guardamos</h2>
+  <p>
+    Quando você entra com a sua conta Google, recebemos do Google apenas o seu
+    nome, o seu e-mail e o endereço da sua foto de perfil. Guardamos esses dados
+    e a data do seu último acesso. Não temos acesso à sua senha, aos seus
+    e-mails, contatos ou arquivos.
+  </p>
+
+  <h2>Para que usamos</h2>
+  <p>
+    Só para saber quem é você, conferir se o seu e-mail tem acesso ao painel e
+    mostrar quem da equipe usa a ferramenta. Não usamos esses dados para
+    publicidade e não os vendemos nem compartilhamos com ninguém.
+  </p>
+
+  <h2>Cookies</h2>
+  <p>
+    O painel usa um único cookie para manter você conectado por até 30 dias. Ao
+    clicar em "Sair", ele é apagado.
+  </p>
+
+  <h2>Onde ficam os dados</h2>
+  <p>
+    Os dados ficam armazenados na Cloudflare, que hospeda o painel. O login é
+    feito pelo Google, de acordo com a política de privacidade do próprio
+    Google.
+  </p>
+
+  <h2>Seus direitos</h2>
+  <p>
+    De acordo com a Lei Geral de Proteção de Dados (LGPD), você pode pedir para
+    ver, corrigir ou apagar os seus dados a qualquer momento, pelo e-mail{" "}
+    <a href={`mailto:${studio.email}`}>{studio.email}</a>.
+  </p>
+</PanelDocument>

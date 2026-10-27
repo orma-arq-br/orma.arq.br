@@ -1,0 +1,64 @@
+---
+import Layout from "../layouts/Layout.astro"
+
+/**
+ * A plain page of text about the studio's internal panel (painel.orma.arq.br):
+ * its privacy policy and terms of use, which Google asks to see before it lets
+ * the panel offer "Entrar com Google". Written for the record, not for
+ * visitors: kept out of search results and the sitemap, and deliberately bare.
+ */
+interface Props {
+  title: string
+  description: string
+  /** When the text last changed, as a visitor reads it: "27 de outubro de 2026". */
+  updated: string
+}
+
+const { title, description, updated } = Astro.props
+---
+
+<Layout title={title} description={description} noindex>
+  <article class="document">
+    <p class="eyebrow">Painel ORMA</p>
+    <h1>{title}</h1>
+    <p class="updated">Atualizado em {updated}</p>
+    <slot />
+  </article>
+</Layout>
+
+<style>
+  .document {
+    inline-size: 100%;
+    max-inline-size: var(--measure);
+    margin-inline: auto;
+    padding: var(--space-6) var(--gutter);
+    font-size: var(--text-ui);
+    line-height: 1.6;
+  }
+
+  .document :global(p),
+  .document :global(ul) {
+    max-inline-size: none;
+    margin-block-end: var(--space-3);
+  }
+
+  .document :global(h2) {
+    margin-block: var(--space-5) var(--space-3);
+  }
+
+  .document :global(a) {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+
+  .updated {
+    margin-block: var(--space-3) var(--space-5);
+    color: var(--color-grey-1);
+  }
+
+  @media (min-width: 60rem) {
+    .document {
+      padding-inline: 0;
+    }
+  }
+</style>
