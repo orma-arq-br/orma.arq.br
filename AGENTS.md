@@ -28,7 +28,7 @@ Manage the background server with `astro dev stop`, `astro dev status`, and `ast
 
 ### Deploying
 
-The site lives at https://orma.arq.br, on Cloudflare. Every push to `master` is built and published automatically (configured in `wrangler.jsonc`), so a push _is_ a publish: only push verified work.
+The site lives at https://orma.arq.br, on Cloudflare. Every push to `master` is built and published automatically (configured in `wrangler.jsonc`), so a push _is_ a publish: only push verified work. The site is static files plus one small script, `worker/index.ts`, that sends `www.orma.arq.br` to `orma.arq.br`; nothing else runs on the server, and nothing else should.
 
 ### Git
 

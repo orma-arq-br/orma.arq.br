@@ -1,23 +1,26 @@
 // Cloudflare deployment. Every push to master is built (`pnpm build`) and
 // published (`npx wrangler deploy`) by Workers Builds, connected to this
-// repository. The site is fully static: no code runs on the server, Cloudflare
-// only serves the files Astro writes to dist/.
+// repository. The site itself is static: Cloudflare serves the files Astro
+// writes to dist/. The only code is worker/index.ts, which sends www to the
+// real address and hands every other request to those files.
 {
   "name": "orma-arq-br",
   "compatibility_date": "2026-10-20",
+  "main": "./worker/index.ts",
   "assets": {
     "directory": "./dist",
+    "binding": "ASSETS",
     // A wrong address gets the site's own 404 page, with a real 404 status.
     "not_found_handling": "404-page",
+    // Files would otherwise be served before the worker ever sees the
+    // request, and www would show a copy of the site instead of redirecting.
+    // The cost: every request counts toward the Workers request allowance
+    // (100,000 a day on the free plan), where plain files are unmetered.
+    "run_worker_first": true,
   },
-  // Cloudflare creates the DNS record and certificate on deploy. The address
-  // is also `studio.url` in src/config.ts, which builds canonical links and
-  // the sitemap; change the two together.
-  //
-  // www is attached only so Cloudflare gives it a DNS record and a
-  // certificate. A redirect rule on the zone (Rules → Redirect Rules) sends
-  // every www request to the same path on orma.arq.br before it reaches the
-  // site; without that rule, www would serve a duplicate of the site.
+  // Cloudflare creates the DNS records and certificates on deploy. The address
+  // is also `studio.url` in src/config.ts, which builds canonical links, the
+  // sitemap and the www redirect; change them together.
   "routes": [
     { "pattern": "orma.arq.br", "custom_domain": true },
     { "pattern": "www.orma.arq.br", "custom_domain": true },
