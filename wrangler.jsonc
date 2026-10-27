@@ -1,8 +1,8 @@
 // Cloudflare deployment. Every push to master is built (`pnpm build`) and
 // published (`npx wrangler deploy`) by Workers Builds, connected to this
 // repository. The site itself is static: Cloudflare serves the files Astro
-// writes to dist/. The only code is worker/index.ts, which sends www to the
-// real address and hands every other request to those files.
+// writes to dist/. The only code is worker/index.ts, which sends www and plain
+// http to https://orma.arq.br and hands every other request to those files.
 {
   "name": "orma-arq-br",
   "compatibility_date": "2026-10-20",
