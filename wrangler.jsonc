@@ -13,5 +13,13 @@
   // Cloudflare creates the DNS record and certificate on deploy. The address
   // is also `studio.url` in src/config.ts, which builds canonical links and
   // the sitemap; change the two together.
-  "routes": [{ "pattern": "orma.arq.br", "custom_domain": true }],
+  //
+  // www is attached only so Cloudflare gives it a DNS record and a
+  // certificate. A redirect rule on the zone (Rules → Redirect Rules) sends
+  // every www request to the same path on orma.arq.br before it reaches the
+  // site; without that rule, www would serve a duplicate of the site.
+  "routes": [
+    { "pattern": "orma.arq.br", "custom_domain": true },
+    { "pattern": "www.orma.arq.br", "custom_domain": true },
+  ],
 }

@@ -21,7 +21,7 @@ The dev server runs at `http://localhost:4321`.
 
 ## Deploying
 
-Cloudflare builds and publishes every push to `master` at https://orma.arq.br (Workers Builds, connected to this repository; configured in `wrangler.jsonc`). Build command `pnpm build`, deploy command `npx wrangler deploy`.
+Cloudflare builds and publishes every push to `master` at https://orma.arq.br (Workers Builds, connected to this repository; configured in `wrangler.jsonc`). Build command `pnpm build`, deploy command `npx wrangler deploy`. `www.orma.arq.br` redirects to `orma.arq.br` through a redirect rule on the Cloudflare zone (Rules → Redirect Rules), not through code.
 
 ## Working on this repo
 
