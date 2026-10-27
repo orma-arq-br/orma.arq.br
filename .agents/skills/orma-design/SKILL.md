@@ -234,4 +234,4 @@ borrow those same four images on purpose ("só para ficar mais bonito") — each
 `cover:` carries a `# TEMPORARY:` comment, and their own folders were deleted.
 Swap each one out as its real photographs arrive.
 
-**Still placeholder, by her explicit decision — do not chase these again:** the WhatsApp number (they do not have one yet), `contato@orma.arq.br` and `@orma.arq.br`. **Still genuinely missing:** every project photograph, Letícia's CAU, and all six project entries in `src/content/projects/`.
+**WhatsApp is real:** +55 51 9329-7649 (given in that exact 8-digit form; wa.me resolves it). **Still placeholder, by her explicit decision — do not chase these again:** `contato@orma.arq.br` and `@orma.arq.br`. **Still genuinely missing:** every project photograph, Letícia's CAU, and all six project entries in `src/content/projects/`.
