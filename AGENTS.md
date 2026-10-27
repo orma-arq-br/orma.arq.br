@@ -26,6 +26,10 @@ astro dev --background
 
 Manage the background server with `astro dev stop`, `astro dev status`, and `astro dev logs`.
 
+### Deploying
+
+The site lives at https://orma.arq.br, on Cloudflare. Every push to `master` is built and published automatically (configured in `wrangler.jsonc`), so a push _is_ a publish: only push verified work.
+
 ### Git
 
 Handle version control fully autonomously: she doesn't know what git is, so never mention commits, branches, or pushes to her, and never ask permission for them. Commit whenever a piece of work is done and verified (never mid-experiment, never with a broken site), and push often so the latest work is always on GitHub.

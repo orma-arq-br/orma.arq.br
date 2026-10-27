@@ -19,6 +19,10 @@ pnpm dev
 
 The dev server runs at `http://localhost:4321`.
 
+## Deploying
+
+Cloudflare builds and publishes every push to `master` at https://orma.arq.br (Workers Builds, connected to this repository; configured in `wrangler.jsonc`). Build command `pnpm build`, deploy command `npx wrangler deploy`.
+
 ## Working on this repo
 
 This project is built primarily through Claude Code. Read `AGENTS.md` before doing anything: it defines who the site is built with, the quality bar, and the project skills in `.agents/skills/` that cover design, motion, copy, and assets.

@@ -1,0 +1,17 @@
+// Cloudflare deployment. Every push to master is built (`pnpm build`) and
+// published (`npx wrangler deploy`) by Workers Builds, connected to this
+// repository. The site is fully static: no code runs on the server, Cloudflare
+// only serves the files Astro writes to dist/.
+{
+  "name": "orma-arq-br",
+  "compatibility_date": "2026-10-20",
+  "assets": {
+    "directory": "./dist",
+    // A wrong address gets the site's own 404 page, with a real 404 status.
+    "not_found_handling": "404-page",
+  },
+  // Cloudflare creates the DNS record and certificate on deploy. The address
+  // is also `studio.url` in src/config.ts, which builds canonical links and
+  // the sitemap; change the two together.
+  "routes": [{ "pattern": "orma.arq.br", "custom_domain": true }],
+}
