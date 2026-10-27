@@ -16,3 +16,6 @@ node_modules/
 
 # jetbrains settings
 .idea/
+
+# cloudflare: wrangler's local state
+.wrangler/
