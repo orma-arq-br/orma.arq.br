@@ -4,6 +4,7 @@ date: 2026-08-15
 categories: ["comercial"]
 location: Carlos Barbosa, RS
 year: 2026
+area: 25
 summary: "Um consultório de nutrição dividido com uma psicóloga, onde a recepção precisava acolher antes de atender. O lilás da marca virou a cor da parede inteira, e a luz quente atrás do painel faz o resto."
 cover: ../../assets/projects/consultorio-th/01-reception.jpg
 coverAlt: Recepção com parede lilás, painel arqueado iluminado por trás em luz quente e balcão ripado branco sobre porcelanato polido
