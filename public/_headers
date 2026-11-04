@@ -1,0 +1,8 @@
+# Cloudflare serves .txt files as bare text/plain, without saying they are
+# UTF-8. Plain text has no other way to declare it, so a reader that guesses
+# Latin-1 turns "Gaúcha" into "GaÃºcha" — in the summary written for AI
+# assistants, of all places. HTML pages and the sitemap declare it themselves.
+/llms.txt
+  Content-Type: text/plain; charset=utf-8
+/robots.txt
+  Content-Type: text/plain; charset=utf-8

@@ -1,6 +1,7 @@
 ---
 import { studio } from "../config"
 import { navLinks } from "../lib/categories"
+import { pagePath } from "../lib/paths"
 import Logo from "./Logo.astro"
 
 /**
@@ -10,8 +11,8 @@ import Logo from "./Logo.astro"
  * On the phone the whole thing collapses into a stacked header.
  */
 
-/** Current path without a trailing slash, so /arquitetura/ matches /arquitetura. */
-const here = Astro.url.pathname.replace(/\/+$/, "") || "/"
+/** Current path in the same form the menu links are written in. */
+const here = pagePath(Astro.url)
 const isCurrent = (href: string) => here === href
 
 const where = studio.regions.join(" e ")

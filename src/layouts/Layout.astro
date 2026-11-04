@@ -6,6 +6,7 @@ import { ClientRouter } from "astro:transitions"
 import SiteNav from "../components/SiteNav.astro"
 import { studio } from "../config"
 import { PHOTO } from "../lib/images"
+import { pagePath } from "../lib/paths"
 import {
   absolute,
   LANGUAGE,
@@ -61,7 +62,7 @@ const {
 } = Astro.props
 
 const pageTitle = title ? TITLE.pattern(title) : TITLE.home
-const canonical = absolute(Astro.url.pathname)
+const canonical = absolute(pagePath(Astro.url))
 
 /**
  * Asking for the same widths and format the picture itself asks for, so the
@@ -145,7 +146,9 @@ const structuredData = {
         fetchpriority="high"
       />
     )}
-    <link rel="canonical" href={canonical} />
+    {/* A page kept out of search has no address worth declaring official: the
+        404 would otherwise name /404, a URL that does not exist. */}
+    {!noindex && <link rel="canonical" href={canonical} />}
 
     {/* Spelled out rather than left to a default, and with the extra
         directives that let a search page show the full description and a large

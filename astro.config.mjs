@@ -41,7 +41,15 @@ export default defineConfig({
     },
   },
 
+  // One address per page, and it is the one without the slash: every link, the
+  // canonical, the sitemap, the structured data and llms.txt all say /sobre.
+  // Built as sobre.html so Cloudflare serves /sobre directly and sends /sobre/
+  // to it; with folders it was the other way round, and every internal link
+  // cost search engines a redirect to a URL no link ever named.
+  trailingSlash: "never",
+
   build: {
+    format: "file",
     // The reveal script starts every photograph invisible, so it has to run.
     // Inlined scripts are the ones an embedded viewer or a strict content
     // policy quietly drops; served as its own file it behaves like any other
