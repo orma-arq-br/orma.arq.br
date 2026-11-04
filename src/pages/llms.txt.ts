@@ -3,7 +3,7 @@ import type { APIRoute } from "astro"
 
 import { categories, categoryLabel, type CategorySlug } from "../lib/categories"
 import { partnerNames, studio, whatsappUrl } from "../config"
-import { absolute, DESCRIPTIONS, LLMS_SUMMARY } from "../seo"
+import { absolute, DESCRIPTIONS, findable, LLMS_SUMMARY } from "../seo"
 
 /**
  * `/llms.txt` — the site in Markdown, for an assistant answering a question
@@ -19,7 +19,7 @@ import { absolute, DESCRIPTIONS, LLMS_SUMMARY } from "../seo"
  * answer are asked in Portuguese.
  */
 export const GET: APIRoute = async () => {
-  const projects = (await getCollection("projects")).sort(
+  const projects = (await getCollection("projects", findable)).sort(
     (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
   )
 

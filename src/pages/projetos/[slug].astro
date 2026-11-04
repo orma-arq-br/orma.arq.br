@@ -49,24 +49,27 @@ const description = DESCRIPTIONS.project(d.summary, d.location, d.year)
 /** The first category is the one the project is filed under in the trail. */
 const primaryCategory = (d.categories as CategorySlug[])[0]
 
-const schema = [
-  projectSchema({
-    title: d.title,
-    summary: d.summary,
-    path,
-    location: d.location,
-    year: d.year,
-    area: d.area,
-    categories: d.categories as CategorySlug[],
-    images: [d.cover, ...d.images.map((image) => image.src)].map(
-      (image) => new URL(image.src, Astro.site).href,
-    ),
-  }),
-  breadcrumbSchema([
-    { name: categoryLabel(primaryCategory), path: `/${primaryCategory}` },
-    { name: d.title, path },
-  ]),
-]
+/** A placeholder describes nothing to machines: its facts are invented. */
+const schema = d.placeholder
+  ? []
+  : [
+      projectSchema({
+        title: d.title,
+        summary: d.summary,
+        path,
+        location: d.location,
+        year: d.year,
+        area: d.area,
+        categories: d.categories as CategorySlug[],
+        images: [d.cover, ...d.images.map((image) => image.src)].map(
+          (image) => new URL(image.src, Astro.site).href,
+        ),
+      }),
+      breadcrumbSchema([
+        { name: categoryLabel(primaryCategory), path: `/${primaryCategory}` },
+        { name: d.title, path },
+      ]),
+    ]
 ---
 
 <Layout
@@ -75,6 +78,7 @@ const schema = [
   schema={schema}
   title={d.title}
   description={description}
+  noindex={d.placeholder}
 >
   <article>
     <figure class="opening">

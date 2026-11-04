@@ -7,6 +7,7 @@ year: 2024
 area: 74
 summary: "Um café em uma loja de rua estreita e comprida, com o balcão logo na entrada. A luz da vitrine chega até o fundo porque nada bloqueia o caminho."
 # TEMPORARY: borrowed from Apartamento BR until this project has its own photos.
+placeholder: true
 cover: ../../assets/projects/apartamento-br/07-bed-detail.webp
 coverAlt: Detalhe da cama vista de cima, com criado-mudo de madeira escura e luminária de mesa dourada
 ---

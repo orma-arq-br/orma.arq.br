@@ -234,4 +234,10 @@ borrow those same four images on purpose ("só para ficar mais bonito") — each
 `cover:` carries a `# TEMPORARY:` comment, and their own folders were deleted.
 Swap each one out as its real photographs arrive.
 
+Those five also carry `placeholder: true`: still on the site for visitors, but
+hidden from search engines and AI assistants (noindex, no structured data, left
+out of the sitemap, llms.txt and every project list machines read), so their
+invented facts are never repeated as the studio's work. When a project gets its
+real photographs and details, delete that line along with the borrowed images.
+
 **WhatsApp is real:** +55 51 9329-7649 (given in that exact 8-digit form; wa.me resolves it). **Instagram is real:** `@orma.arquitetura`. **Still placeholder, by her explicit decision — do not chase this again:** `contato@orma.arq.br`. **Still genuinely missing:** every project photograph, Letícia's CAU, and all six project entries in `src/content/projects/`.
