@@ -51,7 +51,7 @@ export const GET: APIRoute = async () => {
       const d = project.data
       const facts = [
         d.location,
-        d.area ? `${d.area} m²` : undefined,
+        d.area ? `${d.area.toLocaleString("pt-BR")} m²` : undefined,
         String(d.year),
         (d.categories as CategorySlug[]).map(categoryLabel).join(", "),
       ].filter(Boolean)

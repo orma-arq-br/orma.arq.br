@@ -34,7 +34,7 @@ const facts = [
     lines: (d.categories as CategorySlug[]).map(categoryLabel),
   },
   { label: "Local", lines: [d.location] },
-  ...(d.area ? [{ label: "m²", lines: [String(d.area)] }] : []),
+  ...(d.area ? [{ label: "m²", lines: [d.area.toLocaleString("pt-BR")] }] : []),
   { label: "Ano", lines: [String(d.year)] },
 ]
 

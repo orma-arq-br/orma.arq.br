@@ -4,6 +4,12 @@ import { z } from "astro/zod"
 
 import { categorySlugs } from "./lib/categories"
 
+/**
+ * Projects are written by hand or by the panel's "Projetos do site" form
+ * (painel.orma.arq.br, its src/lib/projects.ts), which commits straight to
+ * master. A change to these fields or to the categories needs the same change
+ * there, or the form starts writing projects this schema refuses.
+ */
 const projects = defineCollection({
   loader: glob({ base: "./src/content/projects", pattern: "**/*.md" }),
   schema: ({ image }) =>
