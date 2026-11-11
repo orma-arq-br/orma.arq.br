@@ -29,7 +29,7 @@ export const studio = {
     opens: "09:00",
     closes: "18:00",
   },
-  email: "contato@orma.arq.br",
+  email: "orma.arq.br@gmail.com",
   /** Digits only, country code included. Used to build the wa.me link. */
   whatsapp: "555193297649",
   instagram: "https://www.instagram.com/orma.arquitetura",
