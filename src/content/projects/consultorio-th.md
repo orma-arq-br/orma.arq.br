@@ -6,7 +6,7 @@ location: Carlos Barbosa, RS
 year: 2026
 area: 40
 summary: "Projeto de consultório de nutrição funcional e comportamental, com ambientes acolhedores, cores suaves, formas orgânicas e elementos que traduzem a identidade visual da profissional."
-cover: ../../assets/projects/consultorio-th/12.jpg
+cover: ../../assets/projects/consultorio-th/19.jpg
 coverAlt: "Recepção: espaço de chegada"
 images:
   - src: ../../assets/projects/consultorio-th/13.jpg
