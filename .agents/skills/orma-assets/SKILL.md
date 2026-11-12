@@ -13,10 +13,14 @@ One library, one structure, no strays. Every file she gives us gets imported int
 src/assets/
   brand/                  logo.svg, logo-mark.svg — identity files
   projects/<slug>/        photos of one project: 01-facade.jpg, 02-living-room.jpg…
+  pages/                  photos the site's own pages use: Sobre, Contato, the
+                          default preview card (bedroom.webp, closet-window.webp)
   studio/                 team portraits, office, process photos
 public/                   ONLY files that must keep an exact URL:
                           favicon.svg, favicon.ico, og.jpg, robots.txt
 ```
+
+**`projects/` belongs to the panel.** Projects are edited from the ORMA Painel, which adds, renames and deletes the photos in `projects/<slug>/` on every save. Code never imports from there (lint refuses it): a page photo or a preview image that comes from a project is copied into `pages/` and imported from there, so a project edit can never break the build or change a fixed image.
 
 - File names: lowercase kebab-case, **no accents, no spaces**, and in **English** (photos numbered in display order with a short English word for what they show: `01-facade.jpg`, `02-living-room.jpg`).
 - The one Portuguese exception: **project folder slugs**, because they match the project's visitor-facing URL slug (accent-free pt-BR: `projects/casa-do-lago/` ↔ `/projetos/casa-do-lago`).

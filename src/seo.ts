@@ -14,7 +14,7 @@
 import type { CollectionEntry } from "astro:content"
 
 import brandMark from "./assets/brand/mark.png"
-import fallbackCard from "./assets/projects/consultorio-th/01-reception.jpg"
+import fallbackCard from "./assets/pages/bedroom.webp"
 import {
   categories,
   categoryLabel,
@@ -94,7 +94,7 @@ export const SOCIAL_CARD = {
   /** Used by any page that has no photograph of its own to show. */
   fallback: fallbackCard,
   fallbackAlt:
-    "Recepção com parede lilás, painel arqueado iluminado por trás em luz quente e balcão ripado branco",
+    "Quarto de casal com painel de madeira escura, cabeceira estofada azul e luminária de papel sobre a cama",
 } as const
 
 /**

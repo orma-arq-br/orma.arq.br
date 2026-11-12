@@ -14,4 +14,24 @@ export default defineConfig(
       globals: { ...globals.browser, ...globals.node },
     },
   },
+  {
+    rules: {
+      // src/assets/projects/ belongs to the panel, which adds, renames and
+      // deletes those photographs on every project edit. Code that imports one
+      // breaks the build the moment it goes; a photo a page needs lives in
+      // src/assets/pages/ instead, where only this repository changes it.
+      "no-restricted-imports": [
+        "error",
+        {
+          patterns: [
+            {
+              group: ["**/assets/projects/**"],
+              message:
+                "Project photos are managed from the panel and can disappear. Copy the photo into src/assets/pages/ and import it from there.",
+            },
+          ],
+        },
+      ],
+    },
+  },
 )
