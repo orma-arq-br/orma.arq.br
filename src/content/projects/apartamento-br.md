@@ -1,5 +1,5 @@
 ---
-title: Apartamento BR
+title: Suíte BR
 date: 2026-08-20
 categories: ["interiores"]
 location: Porto Alegre, RS
