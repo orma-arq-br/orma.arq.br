@@ -5,7 +5,7 @@ import ProjectGrid from "../components/ProjectGrid.astro"
 import { studio } from "../config"
 import { openingCell } from "../lib/grid"
 import { tileSizes } from "../lib/images"
-import { collectionSchema, DESCRIPTIONS, findable } from "../seo"
+import { collectionSchema, DESCRIPTIONS } from "../seo"
 import Layout from "../layouts/Layout.astro"
 
 const projects = (await getCollection("projects")).sort(
@@ -24,7 +24,7 @@ const schema = [
     name: studio.name,
     description: DESCRIPTIONS.home,
     path: "/",
-    projects: projects.filter(findable).map((project) => ({
+    projects: projects.map((project) => ({
       title: project.data.title,
       path: `/projetos/${project.id}`,
     })),

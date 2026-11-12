@@ -29,15 +29,6 @@ const projects = defineCollection({
       cover: image(),
       coverAlt: z.string(),
       /**
-       * Shown to visitors so the grid looks full, but not yet a real project:
-       * borrowed photographs, invented facts. Kept out of everything a search
-       * engine or an assistant reads — sitemap, structured data, llms.txt —
-       * and marked noindex, so none of it is ever repeated as the studio's
-       * work. Delete the line once the project has its own photographs and
-       * real details.
-       */
-      placeholder: z.boolean().default(false),
-      /**
        * The photographs below the opening one. Nothing is ever written over
        * these, so there is no caption field to fill in. Only `alt`, which is
        * never seen — it is what a blind visitor hears.

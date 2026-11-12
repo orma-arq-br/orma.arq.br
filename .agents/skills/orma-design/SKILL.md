@@ -229,14 +229,8 @@ side, each the width of a paired photograph elsewhere, centred together. No
 form: she removed it. The e-mail, Instagram and WhatsApp are links.
 
 **Photographs.** Projects, their text and their photographs are managed from
-the ORMA Painel, which commits straight to this repository; the five placeholder
-projects that borrowed Apartamento BR's images were removed there. The photos
-the pages themselves use (Sobre, Contato, the default preview card) are fixed
-copies in `src/assets/pages/`, never a project's own files (see `orma-assets`).
+the ORMA Painel, which commits straight to this repository. The photos the pages
+themselves use (Sobre, Contato, the default preview card) are fixed copies in
+`src/assets/pages/`, never a project's own files (see `orma-assets`).
 
-A project marked `placeholder: true` stays on the site for visitors but is
-hidden from search engines and AI assistants (noindex, no structured data, left
-out of the sitemap, llms.txt and every project list machines read), so invented
-facts are never repeated as the studio's work.
-
-**WhatsApp is real:** +55 51 9329-7649 (given in that exact 8-digit form; wa.me resolves it). **Instagram is real:** `@orma.arquitetura`. **E-mail is real:** `orma.arq.br@gmail.com`. **Still genuinely missing:** every project photograph, Letícia's CAU, and all six project entries in `src/content/projects/`.
+**WhatsApp is real:** +55 51 9329-7649 (given in that exact 8-digit form; wa.me resolves it). **Instagram is real:** `@orma.arquitetura`. **E-mail is real:** `orma.arq.br@gmail.com`. **Still genuinely missing:** Letícia's CAU.

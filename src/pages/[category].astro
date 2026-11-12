@@ -7,12 +7,7 @@ import { studio } from "../config"
 import { categories } from "../lib/categories"
 import { openingCell } from "../lib/grid"
 import { tileSizes } from "../lib/images"
-import {
-  breadcrumbSchema,
-  collectionSchema,
-  DESCRIPTIONS,
-  findable,
-} from "../seo"
+import { breadcrumbSchema, collectionSchema, DESCRIPTIONS } from "../seo"
 import Layout from "../layouts/Layout.astro"
 
 export const getStaticPaths = (async () => {
@@ -48,7 +43,7 @@ const schema = [
     name: `${category.label} — ${studio.name}`,
     description,
     path,
-    projects: projects.filter(findable).map((project) => ({
+    projects: projects.map((project) => ({
       title: project.data.title,
       path: `/projetos/${project.id}`,
     })),

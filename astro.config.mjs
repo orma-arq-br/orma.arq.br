@@ -2,25 +2,7 @@
 import sitemap from "@astrojs/sitemap"
 import { defineConfig } from "astro/config"
 
-import { readdirSync, readFileSync } from "node:fs"
-
 import { studio } from "./src/config"
-
-/**
- * The project pages marked `placeholder: true` (see src/content.config.ts).
- * The config runs before the content collection exists, so the flag is read
- * straight from the files; the file name is the page's address.
- */
-const PROJECTS = "./src/content/projects"
-const placeholderPages = new Set(
-  readdirSync(PROJECTS)
-    .filter((file) =>
-      /^placeholder:\s*true\s*$/m.test(
-        readFileSync(`${PROJECTS}/${file}`, "utf8"),
-      ),
-    )
-    .map((file) => `/projetos/${file.replace(/\.md$/, "")}`),
-)
 
 // https://astro.build/config
 export default defineConfig({
@@ -37,11 +19,7 @@ export default defineConfig({
     sitemap({
       // The internal panel's privacy policy and terms exist for Google's
       // sign-in review, not for visitors: never offered to a search engine.
-      // Nor are placeholder projects, whose photographs are borrowed.
-      filter: (page) => {
-        const path = new URL(page).pathname
-        return !path.startsWith("/painel/") && !placeholderPages.has(path)
-      },
+      filter: (page) => !new URL(page).pathname.startsWith("/painel/"),
       // Every page here is equally worth finding and changes at the same pace:
       // when a project is added. Per-page priorities would be noise.
       changefreq: "monthly",

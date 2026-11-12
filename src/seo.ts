@@ -11,8 +11,6 @@
  * pages: the people asking an assistant for an architect in Porto Alegre are
  * asking in Portuguese.
  */
-import type { CollectionEntry } from "astro:content"
-
 import brandMark from "./assets/brand/mark.png"
 import fallbackCard from "./assets/pages/bedroom.webp"
 import {
@@ -126,15 +124,6 @@ const ID = {
 export const absolute = (path: string) => new URL(path, SITE_URL).href
 
 /**
- * Whether a project may be told to machines. Placeholders stay on the pages
- * for visitors but out of every list a search engine or an assistant reads:
- * their photographs are borrowed and their facts invented. The sitemap applies
- * the same rule in `astro.config.mjs`, reading the same `placeholder` field.
- */
-export const findable = (project: CollectionEntry<"projects">) =>
-  !project.data.placeholder
-
-/**
  * The studio itself: one node answering both "who are they" and "where do they
  * work".
  *
@@ -238,8 +227,8 @@ export function collectionSchema(options: {
     inLanguage: LANGUAGE.tag,
     isPartOf: { "@id": ID.website },
     about: { "@id": ID.studio },
-    // A category whose projects are all placeholders still names a real
-    // service; it just has nothing to list yet, and an empty list says nothing.
+    // A category with no projects yet still names a real service; it just has
+    // nothing to list, and an empty list says nothing.
     ...(options.projects.length
       ? {
           mainEntity: {
