@@ -200,4 +200,14 @@ const where = studio.regions.join(" e ")
       transition: none;
     }
   }
+
+  /* High-contrast mode repaints every background in the page colour, which
+     would erase this line and with it the only sign of which page is open.
+     A border keeps the text colour there. */
+  @media (forced-colors: active) {
+    li a::after {
+      block-size: 0;
+      border-block-end: 1px solid;
+    }
+  }
 </style>

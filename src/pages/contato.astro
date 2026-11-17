@@ -167,4 +167,13 @@ const schema = [
       transition: none;
     }
   }
+
+  /* High-contrast mode repaints backgrounds in the page colour; a border keeps
+     the line visible there. */
+  @media (forced-colors: active) {
+    a::after {
+      block-size: 0;
+      border-block-end: 1px solid;
+    }
+  }
 </style>
