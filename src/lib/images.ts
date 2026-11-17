@@ -110,10 +110,11 @@ export const OPENING_PHOTO = {
 
 /**
  * Every other photograph: not fetched until the visitor is scrolling towards
- * it, and never allowed to compete with the opening one for bandwidth.
+ * it, and never allowed to compete with the opening one for bandwidth. No
+ * fetch priority is named: once one is in view it should arrive at the
+ * ordinary pace, which is what the browser does when left to decide.
  */
 export const LATER_PHOTO = {
   loading: "lazy",
-  fetchpriority: "auto",
   decoding: "async",
 } as const

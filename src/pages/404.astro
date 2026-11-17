@@ -137,16 +137,12 @@ const photo = opening.item.data.cover
       color var(--motion-fast) var(--ease-out-soft);
   }
 
+  /* Only colours change here, nothing moves, so the fade stays on for visitors
+     who ask the system for less motion too. */
   .back:hover,
   .back:focus-visible {
     border-color: #fff;
     background: #fff;
     color: var(--color-ink);
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .back {
-      transition: none;
-    }
   }
 </style>
