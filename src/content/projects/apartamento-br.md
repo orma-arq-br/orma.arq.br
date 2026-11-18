@@ -6,14 +6,14 @@ location: Porto Alegre, RS
 year: 2026
 area: 38
 summary: "Projeto de suíte que integra quarto, closet e banheiro em uma composição elegante e acolhedora, com madeira escura, tons suaves e iluminação intimista."
-cover: ../../assets/projects/apartamento-br/01-bedroom.webp
+cover: ../../assets/projects/apartamento-br/14.jpg
 coverAlt: Quarto de casal com painel de madeira escura, cabeceira estofada azul e luminária japonesa sobre a cama
 images:
-  - src: ../../assets/projects/apartamento-br/06-bedroom-corner.webp
-    alt: Canto do quarto com painel de madeira, penteadeira, cabeceira azul e luminária japonesa
-  - src: ../../assets/projects/apartamento-br/05-dressing-table.webp
+  - src: ../../assets/projects/apartamento-br/15.jpg
     alt: Penteadeira de madeira escura com espelho redondo, prateleiras e cadeira estofada azul
-  - src: ../../assets/projects/apartamento-br/07-bed-detail.webp
+  - src: ../../assets/projects/apartamento-br/16.jpg
+    alt: Canto do quarto com painel de madeira, penteadeira, cabeceira azul e luminária japonesa
+  - src: ../../assets/projects/apartamento-br/17.jpg
     alt: Detalhe da cama vista de cima, com criado-mudo de madeira escura e luminária de mesa dourada
   - src: ../../assets/projects/apartamento-br/03-closet-corridor.webp
     alt: Closet visto da entrada, com armários de madeira escura até o teto e espelho ao fundo, depois de uma porta
