@@ -91,7 +91,9 @@ export const PHOTO: {
   formats: ImageOutputFormat[]
   fallbackFormat: ImageOutputFormat
 } = {
-  widths: [640, 960, 1280, 1600, 2000, 2400],
+  // Up to 4K: the opening photograph fills most of a wide screen, and on a
+  // high-density display (any recent laptop) 2400 was already stretched.
+  widths: [640, 960, 1280, 1600, 2000, 2400, 2880, 3840],
   formats: ["avif"],
   fallbackFormat: "webp",
 }

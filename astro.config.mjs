@@ -29,14 +29,16 @@ export default defineConfig({
 
   image: {
     // Quality is set per format because the numbers don't mean the same thing
-    // in each: AVIF at 60 already looks slightly better than WebP at 80 on
-    // these photographs, and weighs about a quarter less. WebP stays where it
-    // was, so the browsers that fall back to it lose nothing.
+    // in each. AVIF at 60 scored well on paper but, looked at side by side
+    // with the original, it smoothed away exactly what these renders are
+    // about: the weave of an upholstered headboard, the creases in linen,
+    // wood grain. At 75 those survive and the files are still lighter than
+    // the WebP fallback, which moves up to 85 for the same reason.
     service: {
       entrypoint: "astro/assets/services/sharp",
       config: {
-        avif: { quality: 60 },
-        webp: { quality: 80 },
+        avif: { quality: 75 },
+        webp: { quality: 85 },
       },
     },
   },
