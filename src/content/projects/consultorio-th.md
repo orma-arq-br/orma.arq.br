@@ -6,21 +6,21 @@ location: Carlos Barbosa, RS
 year: 2026
 area: 40
 summary: "Projeto de consultório de nutrição funcional e comportamental, com ambientes acolhedores, cores suaves, formas orgânicas e elementos que traduzem a identidade visual da profissional."
-cover: ../../assets/projects/consultorio-th/19.jpg
-coverAlt: "Recepção: espaço de chegada"
+cover: ../../assets/projects/consultorio-th/20.jpg
+coverAlt: "Recepção com entrada à esquerda e balcão para café, e à direita, de frente para a porta, painel curvo na parede com leds atrás, mesa de secretária com ripado e cadeira"
 images:
   - src: ../../assets/projects/consultorio-th/13.jpg
-    alt: "Recepção: espaço de espera"
+    alt: "Recepção: espaço de espera com painel curvo na parede com leds atrás, mesa de secretária com ripado e cadeira"
   - src: ../../assets/projects/consultorio-th/14.jpg
-    alt: Moodboard da sala de consulta
+    alt: Moodboard da sala de consulta nas cores ameixa e bege, tecidos claros, planta e uma sugestão de luminária
   - src: ../../assets/projects/consultorio-th/15.jpg
-    alt: "Consultório: Vista de frente da mesa da nutricionista"
+    alt: "Consultório: Vista de frente da mesa da nutricionista com mesa ripada e, atrás, letreiro com o nome da nutricionista e espelho curvo."
   - src: ../../assets/projects/consultorio-th/16.jpg
     alt: "Consultório: Vista da lateral, com espaço de atendimento e área de avaliação"
   - src: ../../assets/projects/consultorio-th/17.jpg
-    alt: "Consultório: Vista da entrada, com estante de apoio e espelho"
+    alt: "Consultório: Vista da entrada, com estante de apoio e espelho curvo"
   - src: ../../assets/projects/consultorio-th/18.jpg
-    alt: "Consultório: Vista da área de avaliação, com estante e balança"
+    alt: "Consultório: Vista da área de avaliação, com estante e balança de bioimpedância"
 ---
 
 O consultório surgiu da necessidade de criar um espaço para atendimentos individualizados, que transmitisse segurança e conforto, acolhendo diferentes perfis de usuários.
